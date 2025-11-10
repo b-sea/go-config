@@ -16,7 +16,7 @@ func fileLoadError(err error) error {
 	return fmt.Errorf("%w: %w", ErrFileLoad, err)
 }
 
-func envError(err error) error { // coverage-ignore
+func envError(err error) error { // coverage-ignore: this error is rarely hit.
 	return fmt.Errorf("%w: %w", ErrEnvLoad, err)
 }
 
