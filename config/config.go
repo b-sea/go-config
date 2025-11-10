@@ -70,7 +70,7 @@ func Load(cfg any, options ...Option) error {
 		},
 	}), nil)
 	if err != nil {
-		return envError(err) // coverage-ignore
+		return envError(err) // coverage-ignore: this error is rarely hit
 	}
 
 	if err := manager.UnmarshalWithConf(setup.unmarshalPath, cfg, koanf.UnmarshalConf{Tag: setup.tag}); err != nil {

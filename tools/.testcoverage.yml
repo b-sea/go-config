@@ -8,4 +8,4 @@ threshold:
 exclude:
   paths:
 
-force-annotation-comment: false
+force-annotation-comment: true
