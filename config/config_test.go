@@ -177,13 +177,13 @@ func TestLoadConfig(t *testing.T) {
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
 			for k, v := range test.env {
-				os.Setenv(k, v)
+				_ = os.Setenv(k, v)
 			}
 
 			err := config.Load(&test.input, test.options...)
 
 			for k := range test.env {
-				os.Unsetenv(k)
+				_ = os.Unsetenv(k)
 			}
 
 			if test.err == nil {
