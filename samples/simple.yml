@@ -1,0 +1,3 @@
+data: "simple value"
+child:
+  data: "simple value"
