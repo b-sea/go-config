@@ -112,7 +112,7 @@ func TestLoadConfig(t *testing.T) {
 			options: []config.Option{
 				config.WithFile("./../samples/simple.yml"),
 				config.WithEnvPrefix("CONFIG_UNITTEST"),
-				config.SetEnvDelim("_S_"),
+				config.WithEnvDelim("_S_"),
 			},
 			env: map[string]string{
 				"CONFIG_UNITTEST_CHILD_S_DATA": "env value",
@@ -157,7 +157,7 @@ func TestLoadConfig(t *testing.T) {
 		"custom tag": {
 			options: []config.Option{
 				config.WithFile("./../samples/partial.json"),
-				config.SetTag("special"),
+				config.WithTag("special"),
 			},
 			env: map[string]string{},
 			input: struct {

@@ -5,8 +5,8 @@ import "strings"
 // Option is a configuration loading option.
 type Option func(c *config)
 
-// SetTag sets the struct tag to unmarshal.
-func SetTag(tag string) Option {
+// WithTag sets the struct tag to unmarshal.
+func WithTag(tag string) Option {
 	return func(c *config) {
 		if tag == "" {
 			return
@@ -34,8 +34,8 @@ func WithEnvPrefix(prefix string) Option {
 	}
 }
 
-// SetDelim sets the config hierarch delimiter.
-func SetDelim(delim string) Option {
+// WithDelim sets the config hierarch delimiter.
+func WithDelim(delim string) Option {
 	return func(c *config) {
 		if delim == "" {
 			return
@@ -45,8 +45,8 @@ func SetDelim(delim string) Option {
 	}
 }
 
-// SetEnvDelim sets the environment variable hierarchy delimiter.
-func SetEnvDelim(delim string) Option {
+// WithEnvDelim sets the environment variable hierarchy delimiter.
+func WithEnvDelim(delim string) Option {
 	return func(c *config) {
 		if delim == "" {
 			return
